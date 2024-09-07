@@ -1,9 +1,10 @@
 pipeline {
     agent any
 
-    environment {
-        // Define any global environment variables here
-    }
+    // Remove or add environment variables here
+    // environment {
+    //     MY_ENV_VAR = 'value'
+    // }
 
     stages {
         stage('Checkout') {
