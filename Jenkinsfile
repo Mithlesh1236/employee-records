@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    // Remove or add environment variables here
-    // environment {
-    //     MY_ENV_VAR = 'value'
-    // }
-
     stages {
         stage('Checkout') {
             steps {
@@ -16,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'mvn clean install'
+                    bat 'mvn clean install'
                 }
             }
         }
@@ -24,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh 'mvn test'
+                    bat 'mvn test'
                 }
             }
         }
@@ -33,7 +28,7 @@ pipeline {
             steps {
                 script {
                     echo 'Deploying to DEV environment...'
-                    // Add your deployment commands here
+                    bat 'start /B java -jar D:\\Java-work-space\\employee-crud\\target\\employee-crud-0.0.1-SNAPSHOT.jar'
                 }
             }
         }

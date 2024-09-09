@@ -1,16 +1,8 @@
-replicaCount: 1
+replicaCount: 2
 
 image:
-  repository: my-repo/employee-crud
-  tag: "latest"
+  repository: my-repo/my-app
+  tag: latest
   pullPolicy: IfNotPresent
 
-service:
-  type: ClusterIP
-  port: 80
-
-ingress:
-  host: my-repo/employee-crud
-
-environment: "production"  # Default environment value
-
+environment: dev
