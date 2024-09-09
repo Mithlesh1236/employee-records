@@ -1,0 +1,15 @@
+replicaCount: 3
+
+image:
+  repository: my-repo/employee-crud
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
+
+ingress:
+  host: myapp.example.com
+
+environment: "production"

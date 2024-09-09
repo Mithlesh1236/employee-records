@@ -1,0 +1,15 @@
+replicaCount: 2
+
+image:
+  repository: my-repo/employee-crud
+  tag: "uat"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  host: uat.myapp.example.com
+
+environment: "uat"

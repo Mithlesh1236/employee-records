@@ -1,0 +1,15 @@
+replicaCount: 2
+
+image:
+  repository: my-repo/employee-crud
+  tag: "sit"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  host: sit.myapp.example.com
+
+environment: "sit"
